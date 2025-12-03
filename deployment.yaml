@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: custom-api
+spec:
+  selector:
+    app: custom-api
+  ports:
+  - protocol: "TCP"
+    port: 6000
+    targetPort: 5555
+    nodePort: 30634
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: custom-api
+spec:
+  selector:
+    matchLabels:
+      app: custom-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: custom-api
+    spec:
+      imagePullSecrets:
+      - name: aeros-common-deployments
+      containers:
+      - name: custom-api
+        image: registry.gitlab.aeros-project.eu/aeros-public/common-deployments/iota/custom-api:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5555
