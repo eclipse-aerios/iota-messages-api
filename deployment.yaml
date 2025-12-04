@@ -26,11 +26,10 @@ spec:
       labels:
         app: custom-api
     spec:
-      imagePullSecrets:
-      - name: aeros-common-deployments
+      imagePullSecrets: []
       containers:
       - name: custom-api
-        image: registry.gitlab.aeros-project.eu/aeros-public/common-deployments/iota/custom-api:latest
+        image: eclipseaerios/iota-messages-api
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5555

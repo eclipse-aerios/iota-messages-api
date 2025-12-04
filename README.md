@@ -25,7 +25,7 @@ curl -i -k --location 'http://*API_IP*:30634/upload?node=iota-hornet' \
 
 Additionally, an endpoint has been opened in KrakenD to upload from outside the cluster, you can do it with the following POST:
 ```
-curl -i -k --location 'http://cf-mvp-domain.aeros-project.eu/iota_api?node=iota-hornet' \
+curl -i -k --location 'http://my-domain.aerios-project.eu/iota_api?node=iota-hornet' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: ••••••' \
 --data '{
