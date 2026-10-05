@@ -12,22 +12,8 @@ Additionally, a Kubernetes depoyment has been created in case you want to use K8
 ## Testing
 With the Custom API installed you can upload a block into the Tangle with the following command:
 ```
-curl -i -k --location 'http://*API_IP*:30634/upload?node=iota-hornet' \
+curl -i -k --location 'http://localhost:5555/upload?node=iota-hornet' \
 --header 'Content-Type: application/json' \
---data '{
-  "tag": "self.reorquestration",
-  "message": {
-    "THIS CAN BE": "WHATEVER YOU WANT",
-    "AS LONG AS THE": "DATA IS A JSON"
-  }
-}'
-```
-
-Additionally, an endpoint has been opened in KrakenD to upload from outside the cluster, you can do it with the following POST:
-```
-curl -i -k --location 'http://my-domain.aerios-project.eu/iota_api?node=iota-hornet' \
---header 'Content-Type: application/json' \
---header 'Authorization: ••••••' \
 --data '{
   "tag": "self.reorquestration",
   "message": {
