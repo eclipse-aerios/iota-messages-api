@@ -3,15 +3,19 @@ Simple REST API to insert messages into an IOTA Tangle
 
 ## How to build, install, or deploy it
 Simply run a docker build command to create the container:
+
 ```docker build -t iota_api .```
 
 And execute it:
+
 ```docker run -p 5555:5555 iota_api```
 
 Additionally, a Kubernetes depoyment has been created in case you want to use K8s or similar:
+
 ```kubectl apply -f deployment.yaml```
 
 Additionally, you can run it with docker compose:
+
 ```docker compose up -d```
 
 
